@@ -1,0 +1,57 @@
+#%RAML 1.0
+title: placeholder
+version: 1.0.development
+baseUri: http://jsonplaceholder.typicode.com
+
+                
+                
+/books:
+  get:
+    description: Retrieve a list of all the books
+    responses:
+      200: 
+        body: 
+          application/json:
+/book:       
+    post:
+      description: Create a new book
+      body:
+        application/json:
+          
+      responses:
+        200: 
+          body: 
+            application/json:
+    put: 
+        description: Update a book by id
+        body:
+          application/json:            
+        responses:
+         200: 
+           body: 
+              application/json:
+    delete:
+      description: Delete of Book by ID
+      queryParameters: 
+        id:
+          type: integer
+          required: true
+    /findByName:
+      get:
+        description: Search a book by Name
+        queryParameters: 
+           name:
+             type: string
+             required: true
+        responses:
+          200: 
+           body: 
+              application/json:
+          500: 
+            body: 
+             application/json:
+              
+  
+              
+
+            
