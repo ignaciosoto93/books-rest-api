@@ -8,6 +8,9 @@ baseUri: http://jsonplaceholder.typicode.com
 /books:
   get:
     description: Retrieve a list of all the books
+    headers:
+      User:
+        required: true
     responses:
       200: 
         body: 
@@ -15,6 +18,9 @@ baseUri: http://jsonplaceholder.typicode.com
 /book:       
     post:
       description: Create a new book
+      headers:
+        User:
+          required: true
       body:
         application/json:
           
@@ -24,6 +30,9 @@ baseUri: http://jsonplaceholder.typicode.com
             application/json:
     put: 
         description: Update a book by id
+        headers:
+          User:
+            required: true
         body:
           application/json:            
         responses:
@@ -32,6 +41,9 @@ baseUri: http://jsonplaceholder.typicode.com
               application/json:
     delete:
       description: Delete of Book by ID
+      headers:
+        User:
+          required: true
       queryParameters: 
         id:
           type: integer
@@ -39,6 +51,9 @@ baseUri: http://jsonplaceholder.typicode.com
     /findByName:
       get:
         description: Search a book by Name
+        headers:
+          User:
+            required: true
         queryParameters: 
            name:
              type: string
