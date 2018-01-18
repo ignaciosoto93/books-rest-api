@@ -1,5 +1,5 @@
 #%RAML 1.0
-title: placeholder
+title: Book REST API
 version: 1.0.development
 baseUri: http://jsonplaceholder.typicode.com
 
@@ -48,6 +48,10 @@ baseUri: http://jsonplaceholder.typicode.com
         id:
           type: integer
           required: true
+      responses:
+          200: 
+            body: 
+              application/json:
     /findByName:
       get:
         description: Search a book by Name
@@ -62,9 +66,7 @@ baseUri: http://jsonplaceholder.typicode.com
           200: 
            body: 
               application/json:
-          500: 
-            body: 
-             application/json:
+      
               
   
               

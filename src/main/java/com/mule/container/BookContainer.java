@@ -59,12 +59,19 @@ public final class BookContainer {
 		return this.books.get(id);
 	}
 
-	public void mergeBook(Book book) {
-		this.books.put(book.getId(), book);
+	public void mergeBook(Book book) throws Exception {
+		if(this.books.containsKey(book.getId())){
+			this.books.put(book.getId(), book);
+
+		} else throw new Exception("Book ID doesn't exist");
 	}
 
-	public void deleteBook(Integer id) {
-		this.books.remove(id);
+	public void deleteBook(Integer id) throws Exception {
+		
+		if(this.books.containsKey(id)){
+			this.books.remove(id);
+
+		} else throw new Exception("Book ID doesn't exist");
 	}
 
 	public Book findByName(String name) throws Exception {
